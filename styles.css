@@ -1,0 +1,47 @@
+body, h1, h2, p, a {
+    all: unset;
+}
+
+body {
+    font-family: "Atkinson Hyperlegible";
+}
+
+#main {
+    padding-top: 40px;
+    padding-left: 50px;
+}
+
+h1 {
+    font-size: 60px;
+    display: block;
+}
+
+h2 {
+    font-size: 40px;
+    display: block;
+}
+
+p, a {
+    font-size: 25px;
+    display: block;
+}
+
+ /* unvisited link */
+ a:link {
+    color: green;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: green;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: lime;
+  }
+  
+  /* selected link */
+  a:active {
+    color: lime;
+  } 
