@@ -21,9 +21,14 @@ h2 {
     display: block;
 }
 
-p, a {
-    font-size: 25px;
-    display: block;
+p {
+  font-size: 25px;
+  display: block;
+}
+
+a {
+  font-size: 25px;
+  display: inline;
 }
 
  /* unvisited link */
@@ -45,3 +50,17 @@ p, a {
   a:active {
     color: lime;
   } 
+
+
+  button {
+    border: 2px solid black;
+    background-color: white;
+    font: "Atkinson Hyperledgible";
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #dddddd;
+  }
