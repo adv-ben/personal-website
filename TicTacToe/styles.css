@@ -1,0 +1,30 @@
+.rowDiv {
+    display:flex;
+}
+
+.squareDiv, .squareDivO, .squareDivX{
+    flex-shrink:0;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    object-fit: contain;
+}
+
+.squareDiv {
+    background-color: #ddd;
+}
+
+.squareDivX {
+    background-color: #ddd;
+}
+
+.squareDivO {
+    background-color: #ddd;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+  
