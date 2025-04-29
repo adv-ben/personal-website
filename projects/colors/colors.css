@@ -1,0 +1,58 @@
+/* importing from master style */
+@import url("../../styles.css");
+
+p {
+    font-size: 30px;
+}
+
+label.container {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    margin: 10px 0;
+    gap: 15px; /* space between checkmark and text */
+    cursor: pointer;
+}
+
+.checkmark {
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    background-color: #eee;
+}
+
+input:checked + .checkmark {
+    background-color: #9af; /* You can change this to any color or add more logic */
+}
+
+.FFF {
+    color: #444; /* Neutral when nothing is checked */
+}
+
+.FFT {
+    color: #0000FF; /* Blue only */
+}
+
+.FTF {
+    color: #00FF00; /* Green only */
+}
+
+.FTT {
+    color: #00FFFF; /* Green + Blue (cyan) */
+}
+
+.TFF {
+    color: #FF0000; /* Red only */
+}
+
+.TFT {
+    color: #FF00FF; /* Red + Blue (magenta) */
+}
+
+.TTF {
+    color: #FFFF00; /* Red + Green (yellow) */
+}
+
+.TTT {
+    color: #DDD; /* Red + Green + Blue (white) */
+}
