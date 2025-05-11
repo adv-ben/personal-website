@@ -1,5 +1,5 @@
 /* importing from master style */
-@import url("../../styles.css");
+@import url("../../personal_website/styles.css");
 
 p {
     font-size: 30px;
@@ -25,34 +25,12 @@ input:checked + .checkmark {
     background-color: #9af; /* You can change this to any color or add more logic */
 }
 
-.FFF {
-    color: #444; /* Neutral when nothing is checked */
-}
-
-.FFT {
-    color: #0000FF; /* Blue only */
-}
-
-.FTF {
-    color: #00FF00; /* Green only */
-}
-
-.FTT {
-    color: #00FFFF; /* Green + Blue (cyan) */
-}
-
-.TFF {
-    color: #FF0000; /* Red only */
-}
-
-.TFT {
-    color: #FF00FF; /* Red + Blue (magenta) */
-}
-
-.TTF {
-    color: #FFFF00; /* Red + Green (yellow) */
-}
-
-.TTT {
-    color: #DDD; /* Red + Green + Blue (white) */
-}
+/* Text color based on RGB checkbox state: R, G, B (T/F) */
+.FFF { color: #444444; }
+.FFT { color: #0000FF; }
+.FTF { color: #00FF00; }
+.FTT { color: #00FFFF; }
+.TFF { color: #FF0000; }
+.TFT { color: #FF00FF; }
+.TTF { color: #FFFF00; }
+.TTT { color: #DDDDDD; }
