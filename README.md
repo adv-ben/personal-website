@@ -5,9 +5,5 @@ Eternally under construction...
 Runs on nginx
 
 TODO
-Write 	
-    config.cfg
-	nginx.conf
-	install_nginx.sh
-	build_public_dir.sh
-	script.sh
+Update html links to pages
+Update css and js links
