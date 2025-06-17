@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="controls">
+        <div class="slider-container">
+            <label for="slider1">Slider 1: <span id="val1">10</span></label><br />
+            <input type="range" id="slider1" min="1" max="10" value="10" />
+        </div>
+        <div class="slider-container">
+            <label for="slider2">Slider 2: <span id="val2">4</span></label><br />
+            <input type="range" id="slider2" min="1" max="10" value="4" />
+        </div>
+        <div class="radio-container">
+            <label><input type="radio" name="mode" value="naive" checked /> naive</label><br />
+            <label><input type="radio" name="mode" value="1F1P" /> fwd_back</label><br />
+            <label><input type="radio" name="mode" value="ZB1P" /> zero_bubble</label>
+        </div>
+    </div>
+
+  <img id="image" src="./naive/naive10_4.svg" alt="Dynamic Image" />
+
+  <script>
+    const slider1 = document.getElementById('slider1');
+    const slider2 = document.getElementById('slider2');
+    const val1 = document.getElementById('val1');
+    const val2 = document.getElementById('val2');
+    const image = document.getElementById('image');
+    const radios = document.getElementsByName('mode');
+
+    function getPrefix() {
+      for (let radio of radios) {
+        if (radio.checked) return radio.value;
+      }
+      return 'img';
+    }
+
+    function updateImage() {
+      const a = slider1.value;
+      const b = slider2.value;
+      const prefix = getPrefix();
+      val1.textContent = a;
+      val2.textContent = b;
+      image.src = `./${prefix}/${prefix}${a}_${b}.svg`;
+    }
+
+    slider1.addEventListener('input', updateImage);
+    slider2.addEventListener('input', updateImage);
+    for (let radio of radios) {
+      radio.addEventListener('change', updateImage);
+    }
+  </script>
+</body>
+</html>

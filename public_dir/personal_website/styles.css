@@ -4,6 +4,7 @@ body, h1, h2, p, a {
 
 body {
     font-family: "Atkinson Hyperlegible";
+    background-color: #fffff6;
 }
 
 #main {
@@ -36,36 +37,22 @@ a {
   cursor: pointer;
 }
 
- /* unvisited link */
- a:link {
-    color: green;
-  }
-  
-  /* visited link */
-  a:visited {
-    color: green;
-  }
-  
-  /* mouse over link */
-  a:hover {
-    color: lime;
-  }
-  
-  /* selected link */
-  a:active {
-    color: lime;
-  } 
+/* unvisited link */
+a:link {
+  color: green;
+}
 
+/* visited link */
+a:visited {
+  color: green;
+}
 
-  button {
-    border: 2px solid black;
-    background-color: white;
-    font: "Atkinson Hyperledgible";
-    padding: 4px 8px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-  }
+/* mouse over link */
+a:hover {
+  color: lime;
+}
 
-  button:hover {
-    background-color: #dddddd;
-  }
+/* selected link */
+a:active {
+  color: lime;
+} 

@@ -1,0 +1,24 @@
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 20px; 
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* space between items */
+    flex-wrap: wrap; /* optional: wrap on smaller screens */
+}
+
+.slider-container,
+.radio-container {
+    font-family: sans-serif;
+    margin: 0;
+}

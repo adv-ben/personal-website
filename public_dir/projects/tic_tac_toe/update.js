@@ -1,11 +1,8 @@
 export default function update(gameString, xToMove, moveNumber){
-    //console.log(2);
-    //console.log(typeof gameString);
     const gameState = gameString.split("");
-    let result = "continue"
-    //console.log(gameState);
+    let result = "continue";
 
-    let winLineList = [
+    const winLineList = [
         [0, 1, 2],
         [3, 4, 5],
         [6, 7, 8],
@@ -16,52 +13,34 @@ export default function update(gameString, xToMove, moveNumber){
         [2, 4, 6]
     ];
 
-    // check wins
-    for(const winLine of winLineList){
-        let c1 = gameState[winLine[0]];
-        let c2 = gameState[winLine[1]];
-        let c3 = gameState[winLine[2]];
-        if(c1 == c2 && c2 == c3){
-            if(c1 == "X" || c1 == "O"){
-                return {"gameString":gameState.join(""),
-                    "xToMove":xToMove,
-                    "result":"invalid"}
-            }
-        }
-    }
-
     // perform move
-    if(gameState[moveNumber] == "-"){
-        if(xToMove){
-            gameState[moveNumber] = "X";
-        }else{
-            gameState[moveNumber] = "O";
-        }
-        xToMove = xToMove == 1 ? 0 : 1;
-    }else{
-        // invalid move
-        return {"gameString":gameState.join(""),
-        "xToMove":xToMove,
-        "result":"invalid"}
+    if (gameState[moveNumber] === "-") {
+        gameState[moveNumber] = xToMove ? "X" : "O";
+        xToMove = xToMove ? 0 : 1;
+    } else {
+        return {
+            "gameString": gameState.join(""),
+            "xToMove": xToMove,
+            "result": "invalid"
+        };
     }
 
     // determine winner
-    for(const winLine of winLineList){
-        let c1 = gameState[winLine[0]];
-        let c2 = gameState[winLine[1]];
-        let c3 = gameState[winLine[2]];
-        if(c1 == c2 && c2 == c3){
-            if(c1 == "X"){
-                result = "X win";
-            }else if(c1 == "O"){
-                result = "O win";
-            }
+    for (const winLine of winLineList) {
+        const [a, b, c] = winLine;
+        const c1 = gameState[a], c2 = gameState[b], c3 = gameState[c];
+        if (c1 === c2 && c2 === c3 && (c1 === "X" || c1 === "O")) {
+            result = `${c1} win`;
         }
     }
-    return {"gameString":gameState.join(""),
-    "xToMove":xToMove,
-    "result":result}
+
+    return {
+        "gameString": gameState.join(""),
+        "xToMove": xToMove,
+        "result": result
+    };
 }
+
 
 //console.log(update("---------",1,0));
 //console.log(update("X--------",0,3));

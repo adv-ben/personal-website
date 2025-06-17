@@ -40,6 +40,7 @@ function updateGrid(gameString){
                     myDiv.appendChild(img);
                 }
             }else if(c1 == "O"){
+                myDiv.className = "squareDivO";
                 if(!myDiv.hasChildNodes()){
                     var img = document.createElement("img");
                     img.className = "container";
@@ -74,17 +75,22 @@ let xToMove = 1;
 for(let row = 0; row < 3; row++){
     for(let col = 0; col < 3; col++){
         const myDiv = document.querySelector("#div" + (row * 3 + col));
-
         myDiv.addEventListener("click", function(){
-            let moveNumber = myDiv.id.charAt(myDiv.id.length -1);
-            //console.log(moveNumber);
+            let moveNumber = myDiv.id.charAt(myDiv.id.length - 1);
             let gameString = getGameString();
-            //console.log(gameString);
-            let res = update(gameString ,xToMove, moveNumber)
-            xToMove = res.xToMove;
-            gameString = res.gameString;
-            //console.log(res.gameString, res.result);
-            updateGrid(res.gameString);
+            let res = update(gameString, xToMove, moveNumber);
+            console.log(res);
+
+            if (res.result === "continue") {
+                xToMove = res.xToMove;
+                updateGrid(res.gameString);
+            } else {
+                updateGrid(res.gameString); // still update visuals
+                alert(res.result); // optional: show game over
+                // disable further moves
+                document.querySelectorAll(".squareDiv, .squareDivX, .squareDivO")
+                    .forEach(div => div.style.pointerEvents = "none");
+            }
         });
     }
 }
